@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: clamp(30px, 10vh, 70px);
+    width: 100%;
+    background-color: var(--signature-color);
+}
+
+.header-heading {
+    margin-left: 4vw;
+}
+
+.settings-icon {
+    width: 25px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    right: 30px;
+}
+
+h1 {
+    font-size: clamp(50px, 4vw, 150px);
+    margin-left: 7vw;
+}
+
+.tim {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    position: relative;
+    top: 25px;
+    border: 1px solid black;
+}
+
+.note-link {
+    font-size: 4px;
+    width: clamp(100px, 7.5vw, 7.5vw);
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    line-height: 1.5;
+    padding: 5px;
+}
+
+.delete-buttons-con {
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-btn {
+    width: 20%;
+}
+
+.second-delete-btn {
+    opacity: 0;
+    width: 80%;
+    background-color: rgba(255, 0, 0, 0.891);
+    border: none;
+    border-radius: 7px;
+    font-family: "Permanent Marker";
+    transition: all 0.4s ease-out;
+    transform: translateY(-20px);
+}
+
+.view-recently-deleted-btn {
+    height: 30px;
+    width: 60px;
+    background-color: white;
+    border: 2px solid black;
+    transition: all 0.4s linear; 
+}
+
+.view-recently-deleted-btn:hover {
+    background-color: black;
+    color: white;
+}

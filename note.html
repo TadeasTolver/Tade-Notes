@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>New Note</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="https://www.colorhexa.com/08949c.png">
+        <link rel="stylesheet" href="foundation.css"/>
+        <link rel="stylesheet" href="note.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cedarville+Cursive&family=Permanent+Marker&display=swap" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <div class="toolbar">
+            <label>note name</label>
+            <input type="text" class="note-name">
+
+            <label>font-size (pt)</label>
+            <select class="style font-size">
+                <option value="13.3px">📖 10</option>
+                <option value="16px">📄 12</option>
+                <option value="24px">⬆️ 18</option>
+                <option value="32px">💪 24</option>
+                <option value="48px">🚀 36</option>
+            </select>
+
+            <label>font</label>
+            <select class="style font-family">
+                <option value="Liter" style="font-family: Liter;">Liter</option>
+                <option value="Serif" style="font-family: serif;">Serif</option>
+                <option value="Knewave" style="font-family: Knewave;">Knewave</option>
+                <option value="Cedarville Cursive" style="font-family: Cedarville Cursive;">Cedarville Cursive</option>
+            </select>
+
+            <label>highlight</label>
+            <select class="style highlight">
+                <option value="white" class="none">none</option>
+                <option value="rgb(252, 43, 43)">red</option>
+                <option value="rgb(253, 255, 50)">yellow</option>
+                <option value="rgb(171, 255, 50)">green</option>
+                <option value="rgb(134, 135, 134)">grey</option>
+            </select>
+
+            <button class="style bold"><span style="font-family: serif; font-weight: 800;">B</span>&nbsp;&nbsp;bold</button>
+            <button class="style italic"><span style="font-family: serif; font-style: italic;">I</span>&nbsp;&nbsp;italic / oblique</button>
+            <button class="more-button">⋮</button>
+
+            <div class="more-options-con">
+                <div class="switch border-radius">
+                    <label>OUTRAGEOUS border radius </label>
+                    <input type="checkbox">
+                </div>
+            </div>
+        </div>
+
+        <div class="note" contenteditable="true"  tabindex="0">
+        </div>
+
+        <div class="zoom-btns">
+            <button class="zoom-out">-</button>
+            <button class="zoom-in">+</button>
+        </div>
+
+        <a href="index.html"><h4 class="tade-notes-title">Tade Notes .com</h4></a>
+        <script src="note.js" type="module"></script>
+    </body>
+</html>

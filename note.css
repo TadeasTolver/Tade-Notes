@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* toolbar: */
+
+.toolbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80vw;
+    background: var(--signature-color);
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    pointer-events: none;
+}
+
+input {
+    height: 15px;
+    border: 1.5px solid black;
+}
+
+select {
+    border-radius: 0;
+    border: 1.5px solid black;
+}
+
+button {
+    border-radius: 4px;
+    border: 1.5px solid black;
+    background-color: white;
+}
+
+.more-options-con {
+    width: 100%;
+    display: none;
+    border-top: 0.5px solid white;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button.style {
+    color: green;
+}
+
+.style:hover {
+    color: black;
+}
+
+select.style {
+    color: blue;
+}
+
+
+/* note: */
+
+.note {
+    margin-bottom: 90px;
+    font-family: Liter;
+    border: 1px solid black;
+    width: clamp(400px, 30vw, 30vw);
+    aspect-ratio: 2/3;
+    cursor: text;
+    padding: 20px;
+}
+
+.note:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.zoom-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.zoom-btns button {
+    position: fixed;
+    right: 10px;
+    width: 2.5vw;
+    aspect-ratio: 1/1;
+}
+
+.zoom-btns :nth-child(1) {
+    top: 50vh;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.zoom-btns :nth-child(2) {
+    bottom: 50vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tade-notes-title {
+    color: var(--signature-color);
+    font-size: 15px;
+    position: fixed;
+    left: 30px;
+    bottom: 0px;
+}
+
+@media (max-width: 450px) {
+    .zoom-btns {
+        display: none;
+    }
+
+    .more-options-con {
+        top: 122px;
+    }
+}

@@ -1,0 +1,50 @@
+h2 {
+    margin-left: 5vw;
+}
+
+p {
+    margin-right: 5vw;
+}
+
+select {
+    border-radius: 0;
+}
+
+.selectors {
+    margin-left: 5vw;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.heading-text-con {
+    margin-left: 5vw;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.switch input {
+    border: 1px solid black;
+}
+
+.czech {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin-left: 5vw;
+    gap: 1vw;
+}
+
+.czech-text {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.czech-flag {
+    border: 1px solid black;
+    width: 50px;
+    height: 25px;
+}

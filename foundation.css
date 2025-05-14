@@ -1,0 +1,157 @@
+:root {
+    --signature-color: #08949c;
+}
+
+body {
+    font-family: "Liter";
+    overflow-x: hidden;
+}
+
+.back-button {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 100%;
+    margin-left: 1vw;
+    margin-top: 1vw;
+    cursor: pointer;
+}
+
+.more-button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 100%;
+}
+
+.tade-notes-title {
+    font-family: "Knewave";
+    font-size: clamp(20px, 1.5vw, 60px);
+    color: white;
+}
+
+h2 {
+    font-size: clamp(30px, 2.3vw, 120px);
+}
+
+h3 {
+    font-size: clamp(20px, 1.7vw, 100px);
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--signature-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    min-height: 5vw;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.footer-title {
+    margin-left: 5vw;
+}
+
+.footer-slogan {
+    margin-right: 5vw;
+    margin-left: 5vw;
+    color: white;
+}
+
+.important-span {
+    color: red;
+    font-weight: 800;
+}
+
+
+/* note links: */
+.note-links-con {
+    margin-left: 5vw;
+}
+
+.notes-con {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.note-con {
+    width: clamp(150px, 9vw, 300px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-link {
+    width: 100%;
+    aspect-ratio: 2/3;
+    border: 1px solid black;
+}
+
+.note-label {
+    margin: 0;
+}
+
+abbr { 
+    cursor: text;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+/* toggle switch: */
+
+.more-options-con {
+    padding-top: 10px;
+    display: none;
+    justify-content: space-around;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch input {
+    margin-left: 10px;
+    -webkit-appearance: none;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    border-radius: 16px;
+    background-color: white;
+    transition: background .3s;
+}
+
+.switch input::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: var(--signature-color);
+    transition: left .3s;
+}
+
+.switch input:checked {
+    background-color: black;
+}
+
+.switch input:checked::after {
+    left: 66%;
+}
