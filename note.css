@@ -76,28 +76,6 @@ select.style {
     border: 1px solid black;
 }
 
-.zoom-btns {
-    display: flex;
-    flex-direction: column;
-}
-
-.zoom-btns button {
-    position: fixed;
-    right: 10px;
-    width: 2.5vw;
-    aspect-ratio: 1/1;
-}
-
-.zoom-btns :nth-child(1) {
-    top: 50vh;
-    border-radius: 0px 0px 5px 5px;
-}
-
-.zoom-btns :nth-child(2) {
-    bottom: 50vh;
-    border-radius: 5px 5px 0px 0px;
-}
-
 .tade-notes-title {
     color: var(--signature-color);
     font-size: 15px;
