@@ -31,33 +31,35 @@ h1 {
     border: 1px solid black;
 }
 
+.note-links-section {
+    margin-left: 5vw;
+}
+
 .note-link {
-    font-size: 4px;
-    width: clamp(100px, 7.5vw, 7.5vw);
-    aspect-ratio: 2/3;
-    overflow: hidden;
-    line-height: 1.5;
-    padding: 5px;
+    cursor:  pointer;
 }
 
 .delete-buttons-con {
     display: flex;
     flex-direction: row;
+    gap: 0;
 }
 
 .delete-btn {
     width: 20%;
+    cursor: pointer;
+    transition: opacity 0.4s linear;
+    background-color: white;
+    border-radius: 100%;
 }
 
 .second-delete-btn {
     opacity: 0;
-    width: 80%;
+    width: 75%;
     background-color: rgba(255, 0, 0, 0.891);
-    border: none;
-    border-radius: 7px;
-    font-family: "Permanent Marker";
-    transition: all 0.4s ease-out;
+    transition: all 0.2s ease-out;
     transform: translateY(-20px);
+    margin-left: 5px;
 }
 
 .view-recently-deleted-btn {
