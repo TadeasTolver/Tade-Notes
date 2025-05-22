@@ -1,5 +1,6 @@
 const savedNotes = JSON.parse(localStorage.getItem("savedNotes"));
 const today = dayjs().format("YYMMDD");
+const body = document.querySelector("body");
 
 // setting the notes:
 for (let key in savedNotes) {
@@ -67,28 +68,33 @@ for (let key in savedNotes) {
         }
 
         let noteName = savedNotes[key][0];
-        if (noteName.length > 8) {
-            noteName = noteName.substring(0, 8) + "...";
+        if (noteName.length > 14) {
+            noteName = noteName.substring(0, 12) + "...";
         }
 
         document.querySelector(".notes-con").innerHTML += `      
         <div class="note-con">
-            <div class="note-link"></div>
+            <div class="note-link">
+                ${savedNotes[key][1].replace("48px", "12px").replace("32px", "8px").replace("24px", "6px").replace("16px", "4px").replace("13.3px", "3.325px")}
+            </div>
             <div class="note-labels-con">
                 <h4 class="note-label">${noteName}</h4>
-                <h4 class="note-label-days important-span">${daysLeft} days left<h4>
+                <h4 class="note-label important-span">${daysLeft} days left<h4>
             </div>
-            <button class="final-delete-btn final-delete-btn-${key}">DELETE</button>
-            <button class="restore-btn restore-btn-${key}">RESTORE</button>
+            <div class="delete-buttons-con">
+                <button class="final-delete-btn final-delete-btn-${key}">DELETE</button>
+                <button class="restore-btn restore-btn-${key}">RESTORE</button>
+            </div>
         </div>`;
-
     }
 }
 
+// set text if there are no deleted notes:
 if (document.querySelector(".notes-con").innerHTML.trim() === "") {
     document.querySelector(".notes-con").innerHTML += "No recently deleted notes";
 }
 
+// deletement process:
 document.querySelectorAll(".final-delete-btn").forEach((button) => {
     button.addEventListener("click", () => {
         const noteNum = button.classList[1].substring(17);
@@ -100,6 +106,7 @@ document.querySelectorAll(".final-delete-btn").forEach((button) => {
     })
 })
 
+// restore process:
 document.querySelectorAll(".restore-btn").forEach((button) => {
     button.addEventListener("click", () => {
         const noteNum = button.classList[1].substring(12);
@@ -111,3 +118,22 @@ document.querySelectorAll(".restore-btn").forEach((button) => {
 
     });
 });
+
+// setting the theme:
+const theme = localStorage.getItem("theme");
+if (theme === "dark") {
+    document.querySelectorAll(".note-link").forEach(note => {
+        note.style.color = "white";
+    });
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+    document.querySelectorAll(".note-link").forEach(note => {
+        note.style.borderColor = "white";
+    });
+} else if (theme === "peach") {
+    body.style.backgroundColor = "#ffabd1";
+    body.style.color = "#bf608b";
+        document.querySelectorAll(".note-link").forEach(note => {
+        note.style.borderColor = "#bf608b";
+    });
+}
