@@ -5,6 +5,11 @@
 body {
     font-family: "Liter";
     overflow-x: hidden;
+    color: black;
+}
+
+button {
+    cursor: pointer;
 }
 
 .back-button {
@@ -72,36 +77,6 @@ footer {
     font-weight: 800;
 }
 
-
-/* note links: */
-.note-links-con {
-    margin-left: 5vw;
-}
-
-.notes-con {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2vw;
-}
-
-.note-con {
-    width: clamp(150px, 9vw, 300px);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.note-link {
-    width: 100%;
-    aspect-ratio: 2/3;
-    border: 1px solid black;
-}
-
-.note-label {
-    margin: 0;
-}
-
 abbr { 
     cursor: text;
     text-decoration: none;
@@ -154,4 +129,55 @@ a {
 
 .switch input:checked::after {
     left: 66%;
+}
+
+/* note links: */
+
+.notes-con {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.note-con {
+    width: clamp(100px, 7.5vw, 7.5vw);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-link {
+    border: 1px solid black;
+    font-size: 4px;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    line-height: 1.5;
+    padding: 5px;
+}
+
+.note-labels-con {
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+
+.note-label {
+    padding: 0;
+    margin: 0;
+}
+
+.delete-buttons-con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.note-con button {
+    color: white;
+    font-family: "Permanent Marker";
+    border-radius: 7px;
+    border: none;
+    box-shadow: 1px 1px 3px rgb(10, 9, 9);
 }
