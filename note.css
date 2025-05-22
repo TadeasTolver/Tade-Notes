@@ -83,13 +83,3 @@ select.style {
     left: 30px;
     bottom: 0px;
 }
-
-@media (max-width: 450px) {
-    .zoom-btns {
-        display: none;
-    }
-
-    .more-options-con {
-        top: 122px;
-    }
-}
