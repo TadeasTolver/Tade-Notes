@@ -85,15 +85,15 @@ body.addEventListener("mousemove", () => {
     const range = window.getSelection().getRangeAt(0);
     const node = range.commonAncestorContainer.parentNode;
     
-    console.log(window.getComputedStyle(node).fontSize);
+    /*console.log(window.getComputedStyle(node).fontSize);
     console.log(window.getComputedStyle(node).fontFamily);
     console.log(window.getComputedStyle(node).backgroundColor);
+    console.log(window.getComputedStyle(node).lineHeight);*/
+
 
     document.querySelector(".font-size").value = window.getComputedStyle(node).fontSize;
     document.querySelector(".font-family").value = window.getComputedStyle(node).fontFamily;
     document.querySelector(".highlight").value = window.getComputedStyle(node).backgroundColor.replace("rgba(0, 0, 0, 0)", "white");
-
-    console.log(node);
 
   } else {
     if (!noteNameInputInFocus) {
@@ -108,11 +108,32 @@ document.querySelectorAll(".style").forEach((style) => {
   style.addEventListener("change", () => {
 
     const range = window.getSelection().getRangeAt(0);
+    const contents = range.extractContents();
     const span = document.createElement("span");
+
+    console.log(contents);
+
 
     switch (style.classList[1]) {
       case 'font-size':
-        span.style.fontSize = document.querySelector('.font-size').value;
+        contents.querySelectorAll("span").forEach((span) => {
+          span.style.removeProperty("font-size");
+          span.style.removeProperty("line-height");
+        });
+
+        if (contents.firstChild instanceof HTMLSpanElement) {
+          console.log("first child is span")
+          contents.firstChild.style.removeProperty("font-size");
+          contents.firstChild.style.removeProperty("line-height");
+        } else {
+          console.log("first child is NOT span")
+        }
+
+        const size = document.querySelector('.font-size').value + "pt";
+        span.style.fontSize = size;
+
+        span.style.lineHeight = parseFloat(size) * 1.2 + "pt";
+
         break;
       case 'font-family':
         span.style.fontFamily = document.querySelector('.font-family').value;
@@ -121,7 +142,7 @@ document.querySelectorAll(".style").forEach((style) => {
         span.style.backgroundColor = document.querySelector('.highlight').value;
         
         if (localStorage.getItem("theme") === "dark") {
-          span.style.color = "black";
+          span.style.color = "black";                                                                             
         }
         if (document.querySelector('.highlight').value === "black") {
           span.style.color = "white";
@@ -129,7 +150,8 @@ document.querySelectorAll(".style").forEach((style) => {
     }
   
     try {
-      range.surroundContents(span); 
+      span.appendChild(contents);
+      range.insertNode(span);
     } catch (error) {
       console.log(error);
     }
